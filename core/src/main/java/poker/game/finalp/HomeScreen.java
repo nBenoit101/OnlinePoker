@@ -11,19 +11,10 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class HomeScreen implements Screen {
     final Main game;
     Texture backgroundIMG;
-    Texture bucketIMG;
-    Sprite bucket;
-
-
-
-
 
     public HomeScreen(final Main game) {
         this.game = game;
         backgroundIMG = new Texture("33.jpg");
-        bucketIMG = new Texture("bucket.png");
-        bucket = new Sprite(bucketIMG);
-        bucket.setSize(1,1);
     }
     @Override
     public void show() {
@@ -41,13 +32,9 @@ public class HomeScreen implements Screen {
         float worldHeight = game.viewport.getWorldHeight();
 
         game.batch.draw(backgroundIMG, 0, 0, worldWidth, worldHeight);
-        bucket.draw(game.batch);
 
         game.batch.end();
     }
-
-
-
 
     @Override
     public void pause() {
@@ -72,7 +59,6 @@ public class HomeScreen implements Screen {
     @Override
     public void dispose() {
         backgroundIMG.dispose();
-        bucketIMG.dispose();
     }
 
 }
